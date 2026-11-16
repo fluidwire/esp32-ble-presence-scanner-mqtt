@@ -1,0 +1,24 @@
+// config.h.example - copy this file to config.h and fill in your own values.
+// config.h is .gitignore'd so your secrets never leave your machine.
+
+#pragma once
+
+// --- WiFi -------------------------------------------------------------------
+#define WIFI_SSID      "your-wifi-ssid"
+#define WIFI_PASSWORD  "your-wifi-password"
+
+// --- MQTT broker ------------------------------------------------------------
+#define MQTT_HOST       "broker.hivemq.com"
+#define MQTT_PORT       1883
+#define MQTT_CLIENT_ID  "fluidwire-esp32-presence"
+#define MQTT_USER       ""
+#define MQTT_PASSWORD   ""
+#define MQTT_TOPIC      "fluidwire/demo/presence"
+
+// --- Devices to track -------------------------------------------------------
+// One { "mac", "name" } pair per line, comma-separated. MAC is the BLE address
+// as shown by a scanner app (nRF Connect, LightBlue); case does not matter.
+// "name" becomes part of the MQTT topic, so keep it lower-case, no spaces.
+#define TRACKED_DEVICES \
+  { "aa:bb:cc:dd:ee:ff", "ton-phone" }, \
+  { "11:22:33:44:55:66", "lab-tag" }
